@@ -25,16 +25,17 @@ public:
         this->imag = 0.0;
     }
     
-    //Constructor 2 - default of second parameter is 1 if not specified
+    //Constructor 2 - default of second parameter is 0 if not specified
     ComplexNumber(const double r, const double i=0.0) {
         this->real = r;
         this->imag = i;
     }
     
-    //Copy constructors
-    ComplexNumber(const ComplexNumber& c) {
+    // Copy constructors
+    ComplexNumber(const ComplexNumber &c) {
         this->imag = c.imag;
         this->real = c.real;
+        
     }
 
     //Destructor
@@ -62,14 +63,14 @@ public:
     }
 
     //Add in place
-    void add(const ComplexNumber& c) {
+    void add(const ComplexNumber &c) {
         this->real += c.real;
         this->imag += c.imag;
     }
     
     //Add
-    ComplexNumber addedTo(const ComplexNumber& c) {
-        return ComplexNumber(this->real+c.real, this->imag+c.imag);
+    ComplexNumber addedTo(const ComplexNumber &c) {
+        return ComplexNumber(this->real + c.real, this->imag + c.imag);
     }
     
     //Display
